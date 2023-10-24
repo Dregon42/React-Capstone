@@ -114,8 +114,6 @@ const SpotifyPlayer = () => {
         {galleryItems.map((item) => (
           <figure
             key={item.id}
-            // className={`gallery__item gallery__item--${item.id.substring(3)}`}
-            // id={item.id}
             onClick={(e) => getSong(item.alt, e)}
           >
             <img src={item.src} alt={item.alt} className="gallery__img" />

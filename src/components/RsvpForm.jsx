@@ -22,6 +22,7 @@ export default function RsvpForm() {
   };
 
   const onSubmit = (data) => {
+    console.log(data)
     dispatch(chooseGuest_1(data.guest_1));
     dispatch(chooseGuest_2(data.guest_2));
     dispatch(chooseMessage(data.message));
@@ -89,6 +90,7 @@ export default function RsvpForm() {
               <div>
                 <input
                   type="submit"
+                  onClick={handleClose}
                   className="bg-slate-500 text-white p-2 rounded-md cursor-pointer"
                 />
               </div>
