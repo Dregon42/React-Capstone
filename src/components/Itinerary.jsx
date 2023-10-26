@@ -1,10 +1,10 @@
 import React from 'react';
-import Invite from '../assets/pngtree-simple-bow-blue-invitation-red-background-material-cardinvitationhigh-endatmospherebackgroundbackground-materialadvertising-image_76741.jpg'
+import Invite from '../assets/blue_backdrop.jpg'
 import RsvpForm from './RsvpForm';
 
 export default function Itinerary() {
   return (
-    <div className='bg-center bg-contain bg-no-repeat w-full h-full relative py-10 font-Tangerie text-gold'
+    <div className='bg-center bg-contain bg-no-repeat w-full h-full relative py-10 font-Tangerie text-gold bg-blend-lighten'
     style={{ backgroundImage: `url(${Invite})`}}>
 
         <div className='absolute inset-0 flex flex-col items-center justify-center pt-20'>

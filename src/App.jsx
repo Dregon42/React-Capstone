@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="flex">
-      <BrowserRouter>
+      <BrowserRouter> {/* HashRouter doesn' work */}
         <NavBar />  
         <Provider store={store}>
           <Routes>

@@ -6,7 +6,7 @@ import Itinerary from '../components/Itinerary';
 export default function Home() {
   return (
     <>
-        <div className='bg-cover bg-center w-full flex justify-center p-20'
+        <div className='bg-cover bg-center w-screen h-screen ml-44 flex justify-center p-20 shadow-inner'
           style={{ backgroundImage: `url(${Background})` }}>
             <div className='w-full'>
                 <Itinerary />

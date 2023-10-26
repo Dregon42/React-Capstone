@@ -4,7 +4,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 
 import { useDispatch } from 'react-redux';
-import { chooseGuest_1, chooseGuest_2, chooseMessage } from '../redux/silces/RootSlice';
+import { chooseGuest_1, chooseGuest_2, chooseMessage } from '../redux/silces/RsvpSlice';
 import { server_calls } from '../api/server'
 
 export default function RsvpForm() {
@@ -23,6 +23,7 @@ export default function RsvpForm() {
 
   const onSubmit = (data) => {
     console.log(data)
+    // dispatch to update Redux store
     dispatch(chooseGuest_1(data.guest_1));
     dispatch(chooseGuest_2(data.guest_2));
     dispatch(chooseMessage(data.message));
@@ -59,9 +60,9 @@ export default function RsvpForm() {
         closeAfterTransition
       >
         <Fade in={open}>
-          <div className="modal-container">
-            <h1>RSVP</h1>
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-gold p-4 rounded-md">
+          <div className="m-20 px-96">
+            <h1 className='text-white'>RSVP</h1>
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-bleach_almond p-4 rounded-md">
               <div className="mb-4">
                 <input
                   type="text"
@@ -83,15 +84,15 @@ export default function RsvpForm() {
                   {...register("message")}
                   className="bg-white p-2 rounded-md w-full"
                   placeholder="Message"
-                  cols="30"
-                  rows="10"
+                  cols="10"
+                  rows="5"
                 ></textarea>
               </div>
               <div>
                 <input
                   type="submit"
                   onClick={handleClose}
-                  className="bg-slate-500 text-white p-2 rounded-md cursor-pointer"
+                  className="font-bold h-10 rounded-full border-y-2 ml-44 w-2/5 text-bleach_almond bg-burgundy transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 hover:bg-slate-500 duration-300 hover:drop-shadow-2xl cursor-pointer"
                 />
               </div>
             </form>
