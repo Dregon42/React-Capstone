@@ -104,7 +104,7 @@ const SpotifyPlayer = () => {
     {
       id: 'fig4',
       src: 'https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209019-rexusa_781721f.jpg?crop=900:600&width=440',
-      alt: "I Wanna Dance Whitney Houston",
+      alt: "Why i love you Major",
     },
     {
       id: 'fig5',

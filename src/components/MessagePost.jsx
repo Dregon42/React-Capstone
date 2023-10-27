@@ -26,7 +26,7 @@ const MessagePost = () => {
       <h2 className='text-4xl font-bold mb-4 text-ellipsis text-white text-shadow-sm shadow-navy_blue'>Cheers to the Happy Couple!!</h2>
       {Array.isArray(messages) && messages.length > 0 ? (
         messages.map((msg, index) => (
-          <div key={index} className="p-4 mb-4 rounded-lg shadow-md bg-bleach_almond">
+          <div key={index} className="p-4 mb-4 rounded-lg shadow-md bg-bleach_almond w-3/5">
             <p className='text-4xl font-Parisienne w-auto text-shadow shadow-navy_blue'>{msg}</p>
           </div>
         ))

@@ -21,6 +21,9 @@ export default {
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
         lg: '0 8px 16px var(--tw-shadow-color)',
       },
+      shadowRight: { // added shadow to right side of navbar
+        DEFAULT:'0 8px 25px var(--tw-shadow-color)', 
+      }
     },
   },
   plugins: [

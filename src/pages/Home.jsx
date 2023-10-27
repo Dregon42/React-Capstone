@@ -1,6 +1,7 @@
 import React from 'react';
 import Background from '../assets/stephen-frank-1nls6y6XZJ4-unsplash.jpg';
 import Itinerary from '../components/Itinerary';
+import Profile from '../auth0/Profile';
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
             <div className='w-full'>
                 <Itinerary />
             </div>
+            <Profile />
         </div>
 
         

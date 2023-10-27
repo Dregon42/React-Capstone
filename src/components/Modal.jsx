@@ -13,7 +13,7 @@ const style = {
     maxHeight: '95%',
     bgcolor: 'transparent',
     border: '5px',
-    // boxShadow: 24,
+    boxShadow: 24,
     p: 4,
   };
 

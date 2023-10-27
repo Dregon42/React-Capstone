@@ -4,7 +4,7 @@ import RsvpForm from './RsvpForm';
 
 export default function Itinerary() {
   return (
-    <div className='bg-center bg-contain bg-no-repeat w-full h-full relative py-10 font-Tangerie text-gold bg-blend-lighten'
+    <div className='bg-center bg-contain bg-no-repeat w-3/4 ml-44 h-full relative py-10 font-Tangerie text-gold bg-blend-lighten shadow-xl'
     style={{ backgroundImage: `url(${Invite})`}}>
 
         <div className='absolute inset-0 flex flex-col items-center justify-center pt-20'>
