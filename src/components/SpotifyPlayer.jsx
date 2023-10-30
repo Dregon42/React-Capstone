@@ -63,7 +63,7 @@ const SpotifyPlayer = () => {
 
   const closeModal = () => {
     setOpenModal(false)
-  }
+  };
 
   const songSnippet = (url) => {
     const song = new Audio(url);

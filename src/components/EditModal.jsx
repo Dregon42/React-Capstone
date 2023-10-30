@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import Button from '@mui/material/Button';
 
-import { useDispatch } from 'react-redux';
-import { updateMessage } from '../redux/silces/MessageSlice';
-import { server_calls } from '../api/server';
-
 const EditMessageModal = ({ isEditing, selectedMessage, handleUpdateMessage, handleCancelEdit }) => {
   const [editedMessage, setEditedMessage] = useState(selectedMessage);
-  const dispatch = useDispatch();
 
   const handleSave = () => {
-    handleUpdateMessage(editedMessage); // This saves the edited message locally in the component
-    server_calls.update(editedMessage)
-    // Dispatch the updateMessage action to update the message in the Redux store
-    
-    dispatch(updateMessage({ updatedMessage: editedMessage }));
+    handleUpdateMessage(editedMessage); // Call the function from the parent component to update the message
+    handleCancelEdit(); // Call the function from the parent component to close the modal
   };
 
   const handleClose = () => {
-    handleCancelEdit();
+    handleCancelEdit(); // Call the function from the parent component to close the modal
   };
 
   return (

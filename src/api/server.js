@@ -1,4 +1,4 @@
-const token = 'e65f5adf6cdfc7935effda7ade535ba46010b57f';
+const token = 'eb5f766b3a51e63a9109413d5e1eff8daa211139';
 
 export const server_calls = {
     get: async () => { 
@@ -76,4 +76,4 @@ export const server_calls = {
         return;
     },
     
-}
+};

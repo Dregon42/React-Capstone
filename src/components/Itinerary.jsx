@@ -1,5 +1,5 @@
 import React from 'react';
-import Invite from '../assets/blue_backdrop.jpg'
+import Invite from '../assets/blue_backdrop.jpg';
 import RsvpForm from './RsvpForm';
 
 export default function Itinerary() {
@@ -30,5 +30,5 @@ export default function Itinerary() {
             </div>
         </div>
     </div>
-  )
-}
+  );
+};

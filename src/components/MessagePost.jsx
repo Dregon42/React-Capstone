@@ -3,39 +3,64 @@ import { useDispatch, useSelector } from 'react-redux';
 import { server_calls } from '../api/server';
 import { chooseMessages } from '../redux/silces/MessageSlice';
 import Placard from '../assets/gold-background.jpg';
-import EditMessageModal from './EditModal'; // Import the modal component
+import EditMessageModal from './EditModal';
+import { chooseMessage } from '../redux/silces/RsvpSlice';
 
 const MessagePost = () => {
   const dispatch = useDispatch();
   const messages = useSelector((state) => state.post.messages);
-  const [selectedMessage, setSelectedMessage] = useState(''); // Track the selected message
+  const [rsvpData, setRsvpData] = useState([]); // State to store RSVP data
+  const [selectedMessage, setSelectedMessage] = useState('');
   const [isEditing, setIsEditing] = useState(false);
 
+  console.log(rsvpData)
+  console.log(messages)
+
   useEffect(() => {
+    // Fetch all RSVP data and store it in rsvpData state
     server_calls.get().then((data) => {
       if (data && Array.isArray(data)) {
+        setRsvpData(data);
         const messageArray = data.map((item) => item.message);
         dispatch(chooseMessages(messageArray));
       }
     });
   }, [dispatch]);
 
-  // Function to handle message selection
   const handleSelectMessage = (message) => {
     setSelectedMessage(message);
     setIsEditing(true);
   };
 
-  // Function to handle message update
-  const handleUpdateMessage = (updatedMessage) => {
-    // Update the message on the server (you need to implement this part)
-    // After updating on the server, update the Redux store and close the modal
-    // Here, we update the local state in this example
-    const updatedMessages = messages.map((msg) =>
-      msg === selectedMessage ? updatedMessage : msg
-    );
-    dispatch(chooseMessages(updatedMessages));
-    setIsEditing(false);
+  const handleUpdateMessage = async (updatedMessage) => {
+    console.log(updatedMessage)
+    // Find the RSVP associated with the original message
+    const rsvpToUpdate = rsvpData.find((rsvp) => rsvp.message === selectedMessage);
+    console.log(rsvpToUpdate)
+
+    if (rsvpToUpdate) {
+      // Extract the RSVP's ID
+      const rsvpId = rsvpToUpdate.id;
+      console.log(rsvpId)
+
+      try {
+        // Update the message on the server
+        await server_calls.update(rsvpId, { message: updatedMessage });
+
+        // Update the local state in your Redux store
+        const updatedMessages = messages.map((msg) =>
+          msg === selectedMessage ? updatedMessage : msg
+        );
+
+        dispatch(chooseMessages(updatedMessages));
+        dispatch(chooseMessage(updatedMessage))
+        setIsEditing(false);
+      } catch (error) {
+        console.error('Failed to update the message on the server:', error);
+      }
+    } else {
+      console.error('Could not find RSVP associated with the selected message.');
+    }
   };
 
   // Function to cancel message editing

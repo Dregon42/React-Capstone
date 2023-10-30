@@ -1,6 +1,6 @@
 import React from 'react';
 import SpotifyPlayer from '../components/SpotifyPlayer';
-import Background from '../assets/photos-by-lanty-rfS6oq6MWlU-unsplash.jpg';
+import Background from '../assets/jeremy-wong-weddings-K41SGnGKxVk-unsplash.jpg';
 
 export default function About() {
   return (
