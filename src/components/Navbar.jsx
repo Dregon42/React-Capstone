@@ -13,7 +13,7 @@ export default function NavBar() {
             <div className="">
               <Link to="/" className='flex'>
                 <div className='bg-gold rounded-full flex justify-center align-middle p-3 pb-20 pl-8 h-9 float-left cursor-pointer mr-2 duration-300' style={{ width: '100px', height: '100px' }}>
-                    <h1 className='text-bleach_almond font-bold text-7xl flex align-middle text-shadow-lg shadow-black'>
+                    <h1 className='text-bleach_almond font-bold text-7xl flex align-middle text-shadow shadow-black'>
                         One Moore Brantley
                     </h1>
                 </div>

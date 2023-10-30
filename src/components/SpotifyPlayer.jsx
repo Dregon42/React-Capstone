@@ -89,7 +89,7 @@ const SpotifyPlayer = () => {
     {
       id: 'fig1',
       src: 'https://www.thehealthy.com/wp-content/uploads/2018/01/GettyImages-1027702326-e1584110138119.jpg',
-      alt: 'Goodmorning PJ Morton',
+      alt: 'Good morning PJ Morton',
     },
     {
       id: 'fig2',
@@ -104,7 +104,7 @@ const SpotifyPlayer = () => {
     {
       id: 'fig4',
       src: 'https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209019-rexusa_781721f.jpg?crop=900:600&width=440',
-      alt: "Why i love you Major",
+      alt: "Why i love Major",
     },
     {
       id: 'fig5',

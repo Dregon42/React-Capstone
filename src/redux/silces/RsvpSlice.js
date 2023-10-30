@@ -11,7 +11,15 @@ export const rsvpSlice = createSlice({
     reducers: {
         chooseGuest_1: (state, action) => { state.guest_1 = action.payload },
         chooseGuest_2: (state, action) => { state.guest_2 = action.payload },
-        chooseMessage: (state, action) => { state.message = action.payload; addMessage(state.message) }
+        chooseMessage: (state, action) => { state.message = action.payload; addMessage(state.message) },
+        updateRsvpMessage: (state, action) => {
+          const { rsvpId, updatedMessage } = action.payload;
+  
+          const rsvp = state.rsvps.find((rsvp) => rsvp.id === rsvpId);
+          if (rsvp) {
+            rsvp.message = updatedMessage;
+          }
+        },
     }
 })
 

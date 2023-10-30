@@ -10,6 +10,7 @@ import { server_calls } from '../api/server'
 export default function RsvpForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
+  
 
   const [open, setOpen] = useState(false);
 
@@ -47,7 +48,7 @@ export default function RsvpForm() {
     <div>
         <button
             type="button"
-            className='ease-in-out duration-300 text-2xl bg-gold hover:bg-yellow-900 text-blue-900 shadow-lg hover:shadow-gold rounded-full border border-3 hover:bottom-5 border-white hover:text-white p-2 px-4 font-bold cursor-pointer'
+            className='text-2xl bg-gold hover:bg-yellow-900 text-blue-900 shadow-lg hover:shadow-gold rounded-full border border-3 hover:bottom-5 border-white hover:text-white p-2 px-4 font-bold cursor-pointer transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 hover:drop-shadow-2xl'
             onClick={handleOpen}
             >
         RSVP
