@@ -9,7 +9,7 @@ export default function Home() {
     <>
         <div className='bg-cover bg-center w-screen h-screen ml-44 flex justify-center p-20 shadow-inner'
           style={{ backgroundImage: `url(${Background})` }}>
-            <div className='w-full'>
+            <div className='w-3/4'>
                 <Itinerary />
             </div>
             <Profile />

@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     domain="dev-l533zzaw0trbepod.us.auth0.com"
     clientId="ac8BCkp5gOEtAZXCo0jNCMTGpMELcsAg"
     authorizationParams={{
-      redirect_uri: 'http://localhost:5173/',
+      redirect_uri: 'https://lively-taffy-cc585c.netlify.app',
       audience: "https://dev-l533zzaw0trbepod.us.auth0.com/api/v2/",
       scope: "read:current_user update:current_user_metadata"
     }}

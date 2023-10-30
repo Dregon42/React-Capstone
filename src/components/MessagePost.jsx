@@ -9,7 +9,7 @@ import { chooseMessage } from '../redux/silces/RsvpSlice';
 const MessagePost = () => {
   const dispatch = useDispatch();
   const messages = useSelector((state) => state.post.messages);
-  const [rsvpData, setRsvpData] = useState([]); // State to store RSVP data
+  const [rsvpData, setRsvpData] = useState([]); 
   const [selectedMessage, setSelectedMessage] = useState('');
   const [isEditing, setIsEditing] = useState(false);
 
@@ -63,7 +63,27 @@ const MessagePost = () => {
     }
   };
 
-  // Function to cancel message editing
+  const handleDeleteMessage = async () => {
+    const rsvpToDelete = rsvpData.find((rsvp) => rsvp.message === selectedMessage);
+
+    if (rsvpToDelete) {
+      const rsvpId = rsvpToDelete.id;
+
+      try {
+        await server_calls.delete(rsvpId);
+        const updatedMessages = messages.filter((msg) => msg !== selectedMessage);
+
+        dispatch(chooseMessages(updatedMessages));
+        setSelectedMessage(''); 
+      } catch (error) {
+        console.error('Failed to delete the message on the server:', error);
+      }
+    } else {
+      console.error('Could not find RSVP associated with the selected message.');
+    }
+  };
+
+
   const handleCancelEdit = () => {
     setSelectedMessage(null);
     setIsEditing(false);
@@ -78,7 +98,7 @@ const MessagePost = () => {
         messages.map((msg, index) => (
           <div
             key={index}
-            className="p-4 mb-4 rounded-lg shadow-md bg-bleach_almond w-3/5"
+            className="p-4 mb-7 rounded-lg shadow-md bg-bleach_almond w-3/5"
             style={{ backgroundImage: `url(${Placard})` }}
             onClick={() => handleSelectMessage(msg)} // Handle message selection
           >
@@ -95,6 +115,7 @@ const MessagePost = () => {
         selectedMessage={selectedMessage}
         handleUpdateMessage={handleUpdateMessage}
         handleCancelEdit={handleCancelEdit}
+        handleDeleteMessage={handleDeleteMessage}
       />
     </div>
   );

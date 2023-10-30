@@ -7,7 +7,7 @@ export default function About() {
     <div className='h-screen w-screen ml-44 flex flex-col font-Tangerie bg-cover bg-center text-white overflow-y-auto overflow-x-hidden'
     style={{ backgroundImage: `url(${ Background })`}}>
         <div className='w-full text-center m-10 px-20'>
-            <p className='text-7xl text-gold font-semibold text-shadow-lg shadow-black'>
+            <p className='text-7xl text-navy_blue font-semibold text-shadow shadow-gold'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero asperiores, eveniet commodi distinctio et enim,
                 laborum maiores nobis tempora, soluta illo ipsum molestiae voluptate esse. Culpa molestias doloribus sed aliquid
                 quasi quidem corporis libero placeat porro maiores voluptate inventore officiis, in, repellat nisi facere, cupiditate

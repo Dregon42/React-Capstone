@@ -121,7 +121,7 @@ const SpotifyPlayer = () => {
 
   return (
     <div className="container flex flex-col items-center justify-center p-20 pt-0">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 p-20">
         {galleryItems.map((item) => (
           <figure
             key={item.id}

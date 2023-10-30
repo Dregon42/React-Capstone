@@ -4,16 +4,21 @@ import Box from '@mui/material/Box';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import Button from '@mui/material/Button';
 
-const EditMessageModal = ({ isEditing, selectedMessage, handleUpdateMessage, handleCancelEdit }) => {
+const EditMessageModal = ({ isEditing, selectedMessage, handleUpdateMessage, handleCancelEdit, handleDeleteMessage }) => {
   const [editedMessage, setEditedMessage] = useState(selectedMessage);
 
   const handleSave = () => {
-    handleUpdateMessage(editedMessage); // Call the function from the parent component to update the message
-    handleCancelEdit(); // Call the function from the parent component to close the modal
+    handleUpdateMessage(editedMessage); 
+    handleCancelEdit(); 
   };
 
   const handleClose = () => {
-    handleCancelEdit(); // Call the function from the parent component to close the modal
+    handleCancelEdit(); 
+  };
+
+  const handleDelete= () => {
+    handleDeleteMessage();
+    handleCancelEdit();
   };
 
   return (
@@ -47,6 +52,9 @@ const EditMessageModal = ({ isEditing, selectedMessage, handleUpdateMessage, han
         </Button>
         <Button variant="contained" onClick={handleClose}>
           Cancel
+        </Button>
+        <Button variant='contained' onClick={handleDelete}>
+          Delete Message
         </Button>
       </Box>
     </Modal>
