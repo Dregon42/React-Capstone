@@ -13,7 +13,7 @@ export default function Itinerary() {
             </h2>
             <div className='text-gold text-center'>
                 <h1 className='text-5xl font-bold'>
-                    L'Rae Brantley <br /> & <br /> Karyn Moore
+                    The Beauty <br /> & <br /> The Beast
                 </h1>
             </div>
             <div className="text-gold text-center pb-2 text-xl">

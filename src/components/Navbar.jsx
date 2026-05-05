@@ -5,7 +5,16 @@ import { Link } from 'react-router-dom';
 
 
 export default function NavBar() {
-  const { isAuthenticated } = useAuth0();
+  // const { isLoading, isAuthenticated, error, user, loginWithRedirect, logout } =
+  //   useAuth0();
+
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+  // if (error) {
+  //   return <div>Oops... {error.message}</div>;
+  // }
+
 
   return (
     <nav className='fixed flex h-screen font-Tangerie font-bold box-shadow min-h-screen'>
@@ -20,31 +29,20 @@ export default function NavBar() {
               </Link>
             </div>
             <ul className="pt-44">
-              {isAuthenticated && (
-                <>
-                <li className='text-gold text-5xl flex items-center gap-x-4 cursor-pointer p-2 bg-navy_blue hover:bg-bleach_almond rounded-md mt-2 transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 duration-300 hover:drop-shadow-2xl'>
-                  <Link to="/about">
-                    <span className='font-medium flex-1 hover:ease-in hover:duration-500 text-shadow-sm shadow-black m-5'>
-                      About Us
-                    </span>
-                  </Link>
-                </li>
-                <li  className='text-gold text-5xl flex items-center gap-x-4 cursor-pointer p-2 bg-navy_blue hover:bg-bleach_almond rounded-md mt-10 transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 duration-300 hover:drop-shadow-2xl'>
-                  <Link to='/message_board'>
-                    <span className='font-medium flex-1 hover:ease-in hover:duration-500 text-shadow-sm shadow-black m-5'>
-                      Message
-                    </span>
-                  </Link>
-                </li>
-                </>
-              )}
-              
-              
-              {isAuthenticated ? (
-                <LogoutButton />
-              ) : (
-                <LoginButton />
-              )}
+              <li className='text-gold text-5xl flex items-center gap-x-4 cursor-pointer p-2 bg-navy_blue hover:bg-bleach_almond rounded-md mt-2 transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 duration-300 hover:drop-shadow-2xl'>
+                <Link to="/about">
+                  <span className='font-medium flex-1 hover:ease-in hover:duration-500 text-shadow-sm shadow-black m-5'>
+                    About Us
+                  </span>
+                </Link>
+              </li>
+              <li  className='text-gold text-5xl flex items-center gap-x-4 cursor-pointer p-2 bg-navy_blue hover:bg-bleach_almond rounded-md mt-10 transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 duration-300 hover:drop-shadow-2xl'>
+                <Link to='/message_board'>
+                  <span className='font-medium flex-1 hover:ease-in hover:duration-500 text-shadow-sm shadow-black m-5'>
+                    Message
+                  </span>
+                </Link>
+              </li>           
             </ul>
         </div>
     </nav>
