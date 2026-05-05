@@ -9,6 +9,8 @@ import { store } from './redux/store';
 
 function App() {
 
+  // Reminder: version Two Start
+
   return (
     <div className="flex">
       <BrowserRouter> {/* HashRouter doesn' work */}

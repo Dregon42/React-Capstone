@@ -4,6 +4,10 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import App from './App.jsx';
 import './index.css';
 
+/**
+ * I am revisiting this app to update UI for Portfolio. Peace be the Journey! 
+ */
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Auth0Provider
