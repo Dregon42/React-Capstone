@@ -20,8 +20,6 @@ export default function NavBar() {
               </Link>
             </div>
             <ul className="pt-44">
-              {isAuthenticated && (
-                <>
                 <li className='text-gold text-5xl flex items-center gap-x-4 cursor-pointer p-2 bg-navy_blue hover:bg-bleach_almond rounded-md mt-2 transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 duration-300 hover:drop-shadow-2xl'>
                   <Link to="/about">
                     <span className='font-medium flex-1 hover:ease-in hover:duration-500 text-shadow-sm shadow-black m-5'>
@@ -36,15 +34,6 @@ export default function NavBar() {
                     </span>
                   </Link>
                 </li>
-                </>
-              )}
-              
-              
-              {isAuthenticated ? (
-                <LogoutButton />
-              ) : (
-                <LoginButton />
-              )}
             </ul>
         </div>
     </nav>

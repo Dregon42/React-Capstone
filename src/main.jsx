@@ -6,6 +6,11 @@ import './index.css';
 
 /**
  * I am revisiting this app to update UI for Portfolio. Peace be the Journey! 
+ * TODO:
+ * - Reconfigure auth0
+ * - Where will i lauch this app? Netlify? Vercel? AWS Amplify?
+ * - Update UI to be more cohesive and visually appealing. 
+ * 
  */
 
 ReactDOM.createRoot(document.getElementById('root')).render(
